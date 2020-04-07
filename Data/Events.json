@@ -1,4 +1,4 @@
-﻿  {
+{
   "001": {
     "eventText": "Tienes un antojo de comida rapida. Podrias pedir una buena hamburguesa por una aplicacion en tu celular y que un delivery te lo traiga",
     "numberPersonsInvolved" : 1,
@@ -121,7 +121,7 @@
     "desperateTrigger": [-1,-1,-1,-1,-1,10000]
   },
         "012": {
-    "eventText": "Escuchas afuera una gran conglomeración de gente. Están rodeando un gigantesco totem de madera con el rostro de un dios primigenio. Un grupo toca tu puerta y te invita a pedir clemencia y el pronto regreso de no se qué.",
+    "eventText": "Escuchas afuera una gran conglomeración de gente. Están prendiendo fuego cadáveres en la calle... Un grupo en túnica toca tu puerta y piden que te sumes al ritual.",
        "numberPersonsInvolved" : 3,
     "tag" : ["evento,religion"],
     "optionsText": [
@@ -156,7 +156,7 @@
         "015": {
     "eventText": "Una gran cantidad de trastos, cositos del coso, pupitos del chirimbulo y otros objetos curiosos estan ocupando gran parte del pequeño almacen. Habria que limpiar para poder volver a poner la basura que tienes en el resto de la casa.",
      "numberPersonsInvolved" : 0,
-    "tag" : ["trabajo,basurero"],
+    "tag" : ["venta,basurero"],
     "optionsText": [
     ["Catalogar todo y ponerlo en venta por internet. Es un trabajo denso pero puede traer sus beneficios.","La basura de unos es el tesoro de otros. No pasó mucho tiempo que alguien te contacta interesado por el repuesto de motor, esas cosas que tenias marcadas como 'corocolo de la heladera'.", 0,-20,30,-10,0,10000,0],
     ["Meter todo en una bolsa con los ojos cerrados. Dentro de tí sabes bien que no quieres tirar nada, pero es necesario.","Con gran dolor tiras todo, sin discriminar, de todas formas llevaban años juntando polvo. Entre tantas porquerias, algunos recuerdos empiezan a brotar, esos los guardas esperando otra oportunidad.", 0,-10,20,0,0,0,-5],
@@ -218,6 +218,115 @@
     ["¿Será momento de entrar en pánico?. Yo creo que sí. Debo ir por mi familia...","Llegas con {nombre}, te gritan que estas loco por no comer bien. Solo hizo falta mostrarles al tio para que te entiendan, tu escopeta siempre fue tu pariente preferido.", -25,20,-10,0,20,0,25]
     ],
     "desperateTrigger": [-1,-1,-1,20,-1,-1]
-  }
-     
+  },
+             "021": {
+    "eventText": "La cuarentena pueden ser vacaciones para unos y la muerte económica para otros, pero no para ti, trabajador a distancia, tienes una serie de proyectos y trabajos esperándote.",
+     "numberPersonsInvolved" : 2,
+    "tag" : ["trabajo,venta"],
+    "optionsText": [
+    ["Si todos están de vacaciones, ¿porqué tu no? Se aprovechan de estos tiempos para enviarte trabajo extra a la misma paga, mejor descanzar unos días.", "Les respondes que estas muy atariado. No tiene sentido estresarse porque sabes que no lo apreciarán, para ellos tu estas igual de osioso.", 15,20,0,0,-15,-1000,0],
+    ["No hacer el trabajo sólo lo acumula.","{nombre} Te envían una lista de correcciones absurda, completas todotrabajando día y noche para recibir el pago cuanto antes.", 5,-15,0,0,15,5000,0],
+    ["Es tu momento de brillar. Decides decirle sí a cualquier pedido, trabajo, consulta y petición que involucre una sustancial suma de dinero.","Vomitas del cansancio y el dolor de cabeza de tanto trabajo, ¡pero hasta esas fotos indecorosas tuyas se están vendiendo como pan caliente!", -25,0,-15,-10,30,15000,5]
+    ],
+    "desperateTrigger": [-1,25,-1,-1,-1,5000]
+  },
+             "022": {
+    "eventText": "Las redes sociales son un buen lugar para poder explotar tus conocimientos y aprender cosas nuevas. Algunos video tutoriales podrían ayudarte a pasar el tiempo.",
+     "numberPersonsInvolved" : 0,
+    "tag" : ["trabajo, juego"],
+    "optionsText": [
+    ["Ver algunos videos de ciencias.", "Es increible que el universo haya iniciado como un estornudo involuntario. Todo lo que aprendiste te abre la mente a futuros increibles.", 0,20,0,-5,-10,2500,0],
+    ["Ver videos sobre hacks and tricks del hogar.","¿Así que con tan solo atando con una soga, una ardilla a un megáfono, se puede improvisar un excelente megáfono-ardilla? cuanto darán por esto en ebay?", 0,15,0,0,15,1000,0],
+    ["Ver videos conspirativos.","Quizá fue mala idea combinarlo con esa última botella de licor, pero no tienes ninguna duda que todo es culpa de ardillas. TODO.", -15,30,0,0,-10,0,5]
+    ],
+    "desperateTrigger": [-1,25,-1,-1,25,-1]
+  },
+             "023": {
+    "eventText": "Es momento de hacer algo de ejercício. El cuerpo achanchado y sedentario sobre la silla no es una buena defensa en la pandemia.",
+     "numberPersonsInvolved" : 1,
+    "tag" : ["profesional, visita"],
+    "optionsText": [
+    ["Pedirle al personal trainer que venga. ($2000)", "Sabes que {nombre} es un profesional y tendrá los recaudos necesarios. Trajo sus herramientas y llevaste tu cuerpo al límite.", 10,20,-15,-15,15,-2000,10],
+    ["Hacer una rutina sencilla.","Tratas de que sea algo que no te quite tiempo. El aire fresco de la terraza y el buen sol, te ejercítas hasta quedar satisfecho.", 10,10,-10,-10,-10,0,0],
+    ["Ir al parque a hacer ejercicios. Esa rutina Saitama suena bien.","100 abdominales, 100 lagartijas y una carrera de 10 kilometros al parque. Sientes como hasta tus cabellos se hacen más fuertes.", 50,30,-20,-20,-20,0,10]
+    ],
+    "desperateTrigger": [25,25,-1,-1,-1,-1]
+  },
+             "024": {
+    "eventText": "Es día de pago. Las noticias muestran largas colas en el banco. Lamentas no haberte levantado más temprano, pero necesitas el efectivo.",
+     "numberPersonsInvolved" : 5,
+    "tag" : ["noticias, emergencia, evento"],
+    "optionsText": [
+    ["Esperar unos días a que se calme.", "El dinero no se va a ir a ninguna parte... Esperas que así sea... Unos días más hasta que se calme y descongestione es sensato.", 0,-15,0,-15,0,15000,15],
+    ["Exigir que te hagan un depósito bancario.","No hay absolutamente ninguna razón lógica para que ir al banco, todo lo que usas y haces funciona con tarjeta. Te insultan por teléfono, pero hacen el pago online.", 0,-10,0,0,-20,10000,5],
+    ["Enviar al abuelo a cobrar por ti. De todas formas el viejo va al mismo lugar por su jubilación.","El abuelo esta muerto. Vas al hospital para retirar tu sobre que aún lo tenía con él... y su jubilación.", -10,-25,0,0,0,20000,25]
+    ],
+    "desperateTrigger": [25,-1,-1,-1,-1,5000]
+  },
+             "025": {
+    "eventText": "En todos los canales de la tele se habla que todo está bien, sólo hay problemas en temas políticos. La cuarentena ya está terminando. ¿Será tan así?.",
+     "numberPersonsInvolved" : 3,
+    "tag" : ["noticias, evento"],
+    "optionsText": [
+    ["Consultar las fuentes y preguntar en las redes del tema.", "Descubres que solo una parte es cierto, lo que muestran en los medios es apenas lo incubrible, tapado por miles de otros datos inútiles se esconde corrupción y manipulación.", -5,-15,0,0,-20,-1500,5],
+    ["Desconectar el cable y pedir la baja del servicio.","Ya es tiempo de ahorrar y cortar con esos vicios que no aportan nada realmente. Das de baja el canal y mantienes internet, de todas formas hace decadas que no ves tele, todo está en internet si sabes buscar.", -5,-10,0,0,-20,1500,10],
+    ["Compartir con todas tus redes lo que acabas de ver. Es la hora de salir y respirar aire puro.","Lo compartes en el grupo del barrio. Ves a {nombre} salir a la calle a aplaudir y abrazarse. La mitad murieron por el virus. Suerte que tu no haces caso a todo lo que pasa en las redes.", -10,20,-10,0,20,0,20]
+    ],
+    "desperateTrigger": [-1,20,-1,-1,20,-1]
+  },
+             "026": {
+    "eventText": "Volviendo de tus compras te cruzas con un hombre descamizado y sudado que te sujeta y usa de escudo. Este grita desaforado mientras personal de seguridad trata de contenerlo.",
+     "numberPersonsInvolved" : 5,
+    "tag" : ["emergencia, evento"],
+    "optionsText": [
+    ["Tratar de razonar con él. Seguro se puede llegar a un acuerdo a cambio de algo.", "Le ofreces todo lo que compraste a cambio de tu libertad. No parece escucharte y tira tus cosas por el aire. Grita que no quiere volver al hospital. Por suerte los de seguridad lo atacan por la espalda y lo reducen.", -25,-15,-15,0,-5,-1500,5],
+    ["Esperar que el pesonal de seguridad actúe o te diga qué hacer.","Los de seguridad tratan de convencerlo que te suelte. Tras un largo dialogo llegan a un acuerdo en el que lo dejan ir, no volverá al hospital del que escapó. No crees que fuera un buen intercambio, se veía muy enfermo.", -10,10,-15,-10,10,-1500,15],
+    ["Algo está mal en esto, decirle que lo apollas. Quitarte la camisa y ponerte en guardia.","Libran una feroz batalla, tu compañero descamizado es experto en vomitar a distancia, los de seguridad ruedan en el piso aterrados. Tu ayuda defendiendo su espalda fue vital para que escape... ¿cómo resistió tantas balas?.", -10,30,-25,-10,15,0,25]
+    ],
+    "desperateTrigger": [-1,25,-1,-1,25,-1]
+  },
+             "027": {
+    "eventText": "Mientras miras esa serie de 900 capitulos de un pirata de plástico, pides un combo de comida usando PedidosFua! Llega 5 horas tarde, {nombre} te lo entrega disculpándose, que es muy difícil trabajar en este estado.",
+     "numberPersonsInvolved" : 1,
+    "tag" : ["delivery, mercado"],
+    "optionsText": [
+    ["Pedirle un descuento para no puntuarlo mal en la app. Es algo sencillo, simplemente no te cobra el envío.", "Con cara de frustración acepta el trato. Lo ves subirse a su bicicleta con 3 carritos enganchados e irse. Sigues con tu serie mientras comes como un rey.", 0,-10,-10,40,-15,-500,5],
+    ["Decirle que no hay problema. Pagarle y volver a tu serie.","Te hubiera gustado un descuento, pero la verdad es que sabes lo complicado de todo, le pagas lo que corresponde y continuas con la serie. Sientes un poco de pena por {nombre}.", 0,-10,-10,40,10,-800,5],
+    ["Ya te comiste las sobras de ayer. No te hace falta, decirle que se vuelva.","El delivery insiste que no puede hacer eso pero tu puerta no parece estremecerse y sigue cerrada. Escuchas sus llantos mientras se sube a su bicicleta tirando 3 carritos. La próxima pides en otra app.", 0,-10,0,25,-15,0,5]
+    ],
+    "desperateTrigger": [25,-1,-1,-1,-1,500]
+  },
+             "028": {
+    "eventText": "Te pasan una nueva receta para combatir el virus. Tan solo necesitas hacer gargaras con vinagre.",
+     "numberPersonsInvolved" : 0,
+    "tag" : ["cheff, medico"],
+    "optionsText": [
+    ["Probarlo. No va a hacerte daño y puede ayudarte.", "No llegas a ponerte un sorbo de vinagre en la boca que escupes todo. Claramente eso mata bacterias pero lavarse los dientes tiene el mismo resultado.", 20,0,10,10,-15,0,0],
+    ["Dudar y decirle a esa persona que no crees en esas cosas.","Investigas unos segundos en internet y es fácil llegar a la conclución de que todas esas recetas de cosas en la boca son lo mismo que lavarse los dientes.", 20,-10,10,0,-10,0,0],
+    ["Sacar el vinagre más fuerte de la alacena. Si vamos a hacerlo, que sea bien.","Cierras los ojos y aprietas la botella de vinagre te enjuague hasta el fondo de la garganta. Sientes como todo e arde y lloras de la emoción. Tu estómago tiene una opinión al respecto y deciden debatirlo en el baño.", -10,20,20,-10,0,0,5]
+    ],
+    "desperateTrigger": [-1,-1,25,25,-1,-1]
+  },
+             "029": {
+    "eventText": "Te invitan a participar de una actividad social en linea interesante: Tienes que crear junto a otras personas desconocidas un juego.",
+     "numberPersonsInvolved" : 0,
+    "tag" : ["juego, amigo"],
+    "optionsText": [
+    ["Entrar y participar pasivamente. Tienes trabajo y vivir solo hace que sea más difícil mantener la casa.", "Te inscribes y participas como ayudante en un proyecto curioso. Es sobre una persona encerrada en la cuarentena y el jugador debe ir tomando desiciones sobre su vida.", 0,20,0,0,20,0,0],
+    ["Inscribirte y participar con aquella idea que siempre tuviste. Sacrificarás más tiempo pero porfin le darás vida.","Investigas unos segundos en internet y es fácil llegar a la conclución de que todas esas recetas de cosas en la boca son lo mismo que lavarse los dientes.", -5,30,-15,0,30,0,0],
+    ["Esperabas por algo así. Es hora de mega-jammear.","Te encierras y participas en todos los proyectos que puedes. Con todas las posiciones y trabajos. No necesitas dormir, comer o salir. ¿Crunchear? Esto es jammear, es casi igual pero sin paga y más pación.", -15,50,-20,-20,50,0,5]
+    ],
+    "desperateTrigger": [-1,25,-1,-1,25,-1]
+  }  ,
+             "030": {
+    "eventText": "La soledad por las noches desespera. Contactas a {nombre}. Quieres hacer algo con esta persona, la extrañas mucho y el tiempo parece eterno, unos dias de cuarentena se estiraron como años.",
+     "numberPersonsInvolved" : 1,
+    "tag" : ["pareja"],
+    "optionsText": [
+    ["Preguntarle si quiere hacer algo de sexting. Ya sea texto unicamente o fotos, quieres verle y soñar y disfrutarle.", "A {nombre} no parece gustarle mucho, pero te aprecia y sabe de tus fetiches. Pasan una noche curiosa y jugona, al final también lo disfruta un poco.", 0,20,0,0,25,0,0],
+    ["Preguntarle si quiere jugar online. Hace tiempo que no juegan aquel viejo MMORPG donde se conocieron.","Reactivan sus cuentas en el viejo MMORPG, entre risas y comentarios de cómo ha envejecido este juego comparado con los nuevos, pasan una linda noche de ciberenamorados.", 0,15,0,0,15,0,0],
+    ["Insistirle para hacer sexting. Necesitas fotos y videos y material para tus momentos a solas.","Parece no gustarle el tono en el que lo pides, pero lo hace de todas formas, conoce tus fetiches y te envía videos y fotos haciendo lo que le pides. No puedes evitar notar la cara de asco al saludarte al final.", 0,50,0,0,-10,0,0]
+    ],
+    "desperateTrigger": [-1,20,-1,-1,-1,-1]
+  }      
 }
