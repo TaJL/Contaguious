@@ -1,9 +1,9 @@
 {
   "Health": ["medico","hospital","profesional"],
-  "Happiness": ["amigo","trabajo","juego"],
+  "Happiness": ["amigo","trabajo","juego","religion"],
   "Cleaness": ["limpieza","basurero","mercado"],
-  "Food": ["delivery","cheff","mercado"],
-  "Social": ["amigo","pareja","visita"],
+  "Food": ["delivery","comida","mercado"],
+  "Social": ["amigo","pareja","visita", "religion"],
   "Money": ["trabajo","venta","mercado"],
   "Population": ["noticias","evento","emergencia"]
 }
