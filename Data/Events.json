@@ -3,8 +3,7 @@
     "eventText": "Tienes un antojo de comida rapida. Podrias pedir una buena hamburguesa por una aplicacion en tu celular y que un delivery te lo traiga",
     "numberPersonsInvolved": 1,
     "tag": [
-      "delivery",
-      "comida"
+      "delivery", "comida"
     ],
     "optionsText": [
       [
@@ -259,9 +258,7 @@
     "numberPersonsInvolved": 4,
     "tag": [
       "venta",
-      "limpieza",
-      "amigo"
-    ],
+      "limpieza" ],
     "optionsText": [
       [
         "Realizar un hobbie.",
@@ -814,7 +811,7 @@
     "eventText": "La hora de comer ha llegado y solo cuentas con galletas húmedas, pan seco y torrejas viejas. No estás en condiciones de volver a exigir a tu cuerpo digerir estas cosas en ese estado. Pensemos soluciones.",
     "numberPersonsInvolved": 1,
     "tag": [
-      "cheff","amigo"
+      "comida","visita"
     ],
     "optionsText": [
       [
@@ -864,7 +861,7 @@
     "eventText": "Tu estomago y tu mente necesitan combustible para continuar. Hace rato que estás racionando, pero quizás hoy podrías darte un lujo, ese plus de energía para continuar durante la semana.",
     "numberPersonsInvolved": 0,
     "tag": [
-      "cheff","juego"
+      "comida","juego"
     ],
     "optionsText": [
       [
@@ -964,7 +961,7 @@
     "eventText": "La pandemia se ha descontrolado. Los países de todo el mundo están en acción buscando una cura. La policía sale a las calles llevándose a quienes estén incumpliendo la cuarentena. ¿Qué nos espera?...",
     "numberPersonsInvolved": 3,
     "tag": [
-      "familia","emergencia"
+      "pareja","emergencia"
     ],
     "optionsText": [
       [
@@ -1367,7 +1364,7 @@
     "eventText": "Te pasan una nueva receta para combatir el virus. Tan solo necesitas hacer gárgaras con vinagre.",
     "numberPersonsInvolved": 0,
     "tag": [
-      "cheff",
+      "comida",
       "medico"
     ],
     "optionsText": [
@@ -1419,7 +1416,7 @@
     "numberPersonsInvolved": 0,
     "tag": [
       "juego",
-      "amigo"
+      "visita"
     ],
     "optionsText": [
       [
