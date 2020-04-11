@@ -4,7 +4,7 @@ onready var anim = $AnimationPlayer
 
 func _ready():
 	anim.play_backwards("StartGame")
-	$Main/Days.text += str(Global.days)
+	$Main/Days.text += str(Global.daysOfQuarentine)
 	
 	if Global.infected:
 		$Main/Infected.text += "Si"
@@ -17,13 +17,20 @@ func _ready():
 		if Global.infectedByYou.size() == 0:
 			$Main/InfectedByYou.text += "Nadie"
 		else:
-			for infected in Global.infectedByYou.size():
-				$Main/InfectedByYou.text += infected + ", "
-			$Main/InfectedByYou.text -=  ", "
+			for infected in range(Global.infectedByYou.size()):
+				if infected == Global.infectedByYou.size()-1:
+					$Main/InfectedByYou.text += " y "
+				elif infected != 0:
+					$Main/InfectedByYou.text += ", "
+				$Main/InfectedByYou.text += Global.infectedByYou[infected]
 	else:
 		$Main/Infected.text += "No"
 		$Main/InfectedBy.text += "Nadie"
 		$Main/InfectedByYou.text +=  "Nadie"
+		
+		if not Global.statEditorEnabled:
+			Global.statEditorEnabled = true
+			anim.play("StatEditorUnlocked")
 
 func RetryPressed():
 	anim.play("StartGame")

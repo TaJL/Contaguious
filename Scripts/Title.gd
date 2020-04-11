@@ -3,30 +3,37 @@ extends CanvasLayer
 const COLOR_ENABLED = "#f8eebf"
 var TEXTURE_CHECKED = load("res://Visuales/Check.png")
 var TEXTURE_UNCHECKED = load("res://Visuales/Uncheck.png")
-const defaultStats = [100,100,100,20,100,20000]
+const defaultStats = [100,100,100,100,100,20000]
 
-export var statsMax = [100,100,100,1000,100,1000000]
+export var statsMax = [100,100,100,100,100,100000]
 
+onready var thanksMenu = $Thanks
+onready var mainMenu = $Main
+onready var tutorial1Menu = $Tutorial1
+onready var tutorial2Menu = $Tutorial2
+onready var gameConfigMenu = $GameConfig
+onready var transition = $Transition
 onready var anim = $AnimationPlayer
 onready var labels = $Tutorial2/Labels
 onready var bgMusic = $BGMusic
 onready var infectedChecker = $GameConfig/Config/Infected/Checker
+onready var gameModes = $GameConfig/GameModes
 
 var stats = []
+var statsGameMode = [[20,100,60,100,60,1000],
+					[30,100,100,100,100,50000],
+					[100,100,100,100,100,0]]
 
 func _ready():
+	# sacar luego
+	HabilitateStartButtom()
+	#
 	$Thanks/Options/Exit.disabled = OS.get_name() == "HTML5"
 	
 	if not Global.cameFromGame:
-		Global.cameFromGame = true
-		$Main.visible = true
 		Global.initialStats = defaultStats.duplicate()
 	else:
-		anim.play("BackToTitle")
 		stats = Global.initialStats.duplicate()
-	######################################
-	# sacar despues
-	HabilitateStartButtom()
 	
 	if Global.startInfected:
 		infectedChecker.texture_normal = TEXTURE_CHECKED
@@ -35,12 +42,30 @@ func _ready():
 	
 	stats = Global.initialStats.duplicate()
 	ActualizeStats()
+	
+	yield(get_tree().create_timer(0.5), "timeout")
+	transition.PlayTransition(1, "fadeOut")
+
+func Transitionate(fromMenu, toMenu):
+	transition.PlayTransition(2,"complete")
+	yield (transition, "allBlack")
+	fromMenu.visible = false
+	toMenu.visible = true
+	yield (transition, "finished")
+
+func StartNewGame():
+	transition.PlayTransition(5,"complete")
+	yield (transition, "allBlack")
+	
+	Global.initialStats = stats.duplicate()
+	Global.statsMax = statsMax.duplicate()
+	Global.NewGame()
+	get_tree().change_scene("res://Screens/Game.tscn")
 
 # THANKS
 
 func ThanksBackPressed():
-	if not anim.is_playing():
-		anim.play("ThanksToMain")
+	Transitionate(thanksMenu, mainMenu)
 
 func ThanksExitPressed():
 	get_tree().quit()
@@ -48,21 +73,17 @@ func ThanksExitPressed():
 #   MAIN
 
 func MainStartPressed():
-	if not anim.is_playing():
-		anim.play("MainToGameConfig")
+	Transitionate(mainMenu, gameConfigMenu)
 
 func MainContextPressed():
-	if not anim.is_playing():
-		anim.play("MainToTutorial1")
+	Transitionate(mainMenu, tutorial1Menu)
 
 func MainExitPressed():
-	if not anim.is_playing():
-		anim.play_backwards("ThanksToMain")
+	Transitionate(mainMenu, thanksMenu)
 
 func HabilitateStartButtom():
 	if not get_node("Main/Start").disabled:
 		return
-	
 	get_node("Main/Start").disabled = false
 	get_node("Main/Start/Label").modulate = Color("#f8eebf")
 
@@ -70,25 +91,21 @@ func HabilitateStartButtom():
 
 func Tutorial1VolverPressed():
 	SetVisibleText("Instruction")
-	if not anim.is_playing():
-		anim.play_backwards("MainToTutorial1")
+	Transitionate(tutorial1Menu, mainMenu)
 
 func Tutorial1SiguientePressed():
 	SetVisibleText("Instruction")
-	if not anim.is_playing():
-		anim.play("Tutorial1ToTutorial2")
+	Transitionate(tutorial1Menu, tutorial2Menu)
 
 #   TUTORIAL 2
 
 func Tutorial2AnteriorPressed():
 	HabilitateStartButtom()
-	if not anim.is_playing():
-		anim.play_backwards("Tutorial1ToTutorial2")
+	Transitionate(tutorial2Menu, tutorial1Menu)
 
 func Tutorial2VolverPressed():
 	HabilitateStartButtom()
-	if not anim.is_playing():
-		anim.play("Tutorial2ToMain")
+	Transitionate(tutorial2Menu, mainMenu)
 
 func SetVisibleText(label_name):
 	for label in labels.get_children():
@@ -115,41 +132,58 @@ func FoodPressed():
 func MoneyPressed():
 	SetVisibleText("Money")
 
-func _on_BGMusic_finished():
-	$BGMusic.play()
-
 # Game Config
 
 func GameConfigBackPressed():
-	if not anim.is_playing():
-		anim.play_backwards("MainToGameConfig")
+	Transitionate(gameConfigMenu, mainMenu)
 
 func GameConfigDefaultPressed():
 	Global.infected = false
 	infectedChecker.texture_normal = TEXTURE_UNCHECKED
 	
 	stats = defaultStats.duplicate()
-	ActualizeStats()
+	GameModepressed(-1)
 
 func GameConfigStartPressed():
-	if not anim.is_playing():
-		anim.play("StartGame")
-		Global.NewGame()
-		yield( anim, "animation_finished" )
-		get_tree().change_scene("res://Screens/Game.tscn")
+	StartNewGame()
 
 func InfectedCheckerPressed():
 	Global.startInfected = !Global.startInfected
 	if Global.startInfected:
 		infectedChecker.texture_normal = TEXTURE_CHECKED
+		stats[0] = 0
+		statsMax[0] = 0
+		get_node("GameConfig/Config/Stat0").ChangeValue(stats[0])
 	else:
 		infectedChecker.texture_normal = TEXTURE_UNCHECKED
+		stats[0] = 5
+		statsMax[0] = 100
+		get_node("GameConfig/Config/Stat0").ChangeValue(stats[0])
+	GameModepressed(-1)
 
 func StatValueChange(value, number, emitter):
 	stats[number] += value
-	stats[number] = clamp(stats[number], 0, statsMax[number])
+	if number == 0:
+		if not Global.startInfected:
+			stats[0] = clamp(stats[0], 5, statsMax[0])
+		else:
+			stats[0] = 0
+	else:
+		stats[number] = clamp(stats[number], 0, statsMax[number])
+	
 	emitter.ChangeValue(stats[number])
+	GameModepressed(-1)
 
 func ActualizeStats():
 	for i in range(stats.size()):
 		get_node("GameConfig/Config/Stat" + str(i)).ChangeValue(stats[i])
+
+
+func GameModepressed(gameModeNumber):
+	for i in range(gameModes.get_children().size()):
+		if i == gameModeNumber:
+			gameModes.get_node("Mode" + str(i)).disabled = true
+			stats = statsGameMode[i].duplicate()
+		else:
+			gameModes.get_node("Mode" + str(i)).disabled = false
+	ActualizeStats()

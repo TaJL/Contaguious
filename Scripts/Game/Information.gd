@@ -7,11 +7,11 @@ const COLOR_GOOD = "#7f9860"
 onready var label = $Margin/information/Label
 onready var results = $Results
 
-func ShowEvent(text = ""):
+func ShowText(text = ""):
 	label.text = text
 	results.visible = false
 
-func ShowResoult(text = "", _results = [0,0,0,0,0,0]):
+func ShowResult(text, _results = [0,0,0,0,0,0]):
 	label.text = text
 	results.visible = true
 	_results[0] *= -1

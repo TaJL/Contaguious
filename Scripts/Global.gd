@@ -1,8 +1,9 @@
 extends Node
 
+var statEditorEnabled = false
 var cameFromGame = false
 
-var days = 0
+var daysOfQuarentine = 5
 var infected = false
 var infectedBy = ""
 var infectedByYou = []
@@ -12,8 +13,6 @@ var initialStats = []
 var statsMax = []
 
 func NewGame():
-	days = 0
-	
 	infected = startInfected
 	if infected:
 		infectedBy = "?"

@@ -16,4 +16,7 @@ func PlusPressed():
 	emit_signal("valueChange", deltaValue, index, self)
 
 func ChangeValue(value):
-	$Value.text = str(value)
+	if index == 5:
+		$Value.text = "$" + str(value)
+	else:
+		$Value.text = str(value) + "%"

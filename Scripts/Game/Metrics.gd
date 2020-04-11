@@ -1,5 +1,7 @@
 extends TextureRect
 
+signal stat_pressed(index)
+
 onready var stats =[$Margin/Stats/Stat1/Health,
 					$Margin/Stats/Stat1/Happiness,
 					$Margin/Stats/Stat1/Cleaness,
@@ -10,3 +12,6 @@ onready var stats =[$Margin/Stats/Stat1/Health,
 func SetStatsText(newValues = [0,0,0,0,0,0]):
 	for i in range(stats.size()):
 		stats[i].NewValueLabel(newValues[i])
+
+func StatPressed(index):
+	emit_signal("stat_pressed", index)

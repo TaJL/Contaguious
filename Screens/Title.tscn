@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/Title.gd" type="Script" id=1]
 [ext_resource path="res://Fuentes/BigFont.tres" type="DynamicFont" id=2]
@@ -25,263 +25,25 @@
 [ext_resource path="res://Visuales/Stats/IconMoney.png" type="Texture" id=23]
 [ext_resource path="res://Visuales/Stats/IconMoneyPressed.png" type="Texture" id=24]
 [ext_resource path="res://Visuales/Stats/IconMoneyHover.png" type="Texture" id=25]
-[ext_resource path="res://Visuales/Uncheck.png" type="Texture" id=26]
-[ext_resource path="res://Escenas/StatEditor.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Visuales/Stats/IconHappinessClean.png" type="Texture" id=28]
-[ext_resource path="res://Visuales/Options/ButtomSmall.png" type="Texture" id=29]
-[ext_resource path="res://Visuales/Options/ButtomSmallPressed.png" type="Texture" id=30]
-[ext_resource path="res://Visuales/Options/ButtomSmallHover.png" type="Texture" id=31]
-[ext_resource path="res://Audio/Soft Mysterious Harp by VWolfdog.ogg" type="AudioStream" id=32]
-
-[sub_resource type="Animation" id=1]
-resource_name = "BackToTitle"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Main:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -224 ), Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Main:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("BGMusic:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -20.0, -10.0 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "MainToGameConfig"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("GameConfig:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -224 ), Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Main:rect_position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 224 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("BGMusic:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -10.0, -20.0 ]
-}
-
-[sub_resource type="Animation" id=3]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Main:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -256, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Tutorial1:rect_position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 256, 0 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "StartGame"
-tracks/0/type = "value"
-tracks/0/path = NodePath("GameConfig:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 224 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("BGMusic:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -20.0, -80.0 ]
-}
-
-[sub_resource type="Animation" id=5]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Thanks:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -256, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Main:rect_position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 256, 0 ), Vector2( 0, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("BGMusic:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -15.0, -10.0 ]
-}
-
-[sub_resource type="Animation" id=6]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Tutorial1:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -256, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Tutorial2:rect_position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 256, 0 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=7]
-length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Main:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -512, 0 ), Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Tutorial1:rect_position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -256, 0 ), Vector2( 256, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Tutorial2:rect_position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 512, 0 ) ]
-}
+[ext_resource path="res://Visuales/Options/ButtomSmall.png" type="Texture" id=26]
+[ext_resource path="res://Visuales/Options/ButtomSmallPressed.png" type="Texture" id=27]
+[ext_resource path="res://Visuales/Options/ButtomSmallHover.png" type="Texture" id=28]
+[ext_resource path="res://Visuales/Uncheck.png" type="Texture" id=29]
+[ext_resource path="res://Escenas/StatEditor.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Visuales/Stats/IconHappinessClean.png" type="Texture" id=31]
+[ext_resource path="res://Escenas/Transition.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Audio/Music/TitleMusic.ogg" type="AudioStream" id=33]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="Thanks" type="Control" parent="."]
 editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -256.0
-margin_right = -256.0
 __meta__ = {
-"_edit_lock_": true,
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -308,15 +70,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -120.0
-margin_top = -80.0
+margin_top = -88.0
 margin_right = 120.0
 margin_bottom = 72.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
-text = "Como yo, ya debes estar cansado de todo esto.
-Pero tratemos de hacer un esfuercito mas por todos los que lo necesitan y para salir lo mejor posible de esto.
-                               Suerte y mucha fuerza
-							                                                      -Manpacman"
+text = "Como nosotros, ya debes estar cansado de todo esto.
+Pero tratemos de hacer un esfuercito mas por todos los que lo necesitan y para salir lo mejor parados que se pueda.
+
+Suerte y mucha fuerza"
 valign = 1
 autowrap = true
 __meta__ = {
@@ -325,9 +87,13 @@ __meta__ = {
 
 [node name="Options" type="HBoxContainer" parent="Thanks"]
 editor/display_folded = true
-margin_top = 192.0
-margin_right = 256.0
-margin_bottom = 224.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -32.0
+margin_right = 128.0
 rect_min_size = Vector2( 0, 30 )
 custom_constants/separation = 8
 alignment = 1
@@ -384,8 +150,9 @@ __meta__ = {
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -4.57764e-005
+margin_right = -6.10352e-005
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
@@ -533,10 +300,9 @@ __meta__ = {
 
 [node name="Tutorial1" type="Control" parent="."]
 editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 256.0
-margin_right = 256.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true,
@@ -579,9 +345,14 @@ __meta__ = {
 }
 
 [node name="Options" type="HBoxContainer" parent="Tutorial1"]
-margin_top = 192.0
-margin_right = 256.0
-margin_bottom = 224.0
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -32.0
+margin_right = 128.0
 rect_min_size = Vector2( 0, 30 )
 custom_constants/separation = 8
 alignment = 1
@@ -635,11 +406,12 @@ __meta__ = {
 
 [node name="Tutorial2" type="Control" parent="."]
 editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 512.0
-margin_right = 511.999
+margin_right = -0.000976563
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -664,23 +436,16 @@ __meta__ = {
 editor/display_folded = true
 margin_left = 40.0
 margin_top = 32.0
-margin_right = 80.0
-margin_bottom = 72.0
+margin_right = 360.0
+margin_bottom = 176.0
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Instruction" type="Label" parent="Tutorial2/Labels"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 188.0
-margin_bottom = 121.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
 text = "Has clic en los iconos para saber que representan"
@@ -692,15 +457,8 @@ __meta__ = {
 }
 
 [node name="Health" type="Label" parent="Tutorial2/Labels"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 188.0
-margin_bottom = 121.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
 text = "-Probabilidad de estar sano-
@@ -713,15 +471,8 @@ __meta__ = {
 }
 
 [node name="Happiness" type="Label" parent="Tutorial2/Labels"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 188.0
-margin_bottom = 121.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
 text = "-Estado de animo-
@@ -735,15 +486,8 @@ __meta__ = {
 }
 
 [node name="Social" type="Label" parent="Tutorial2/Labels"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.0
-margin_top = -20.0
-margin_right = 188.0
-margin_bottom = 121.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
 text = "-Socialización-
@@ -756,15 +500,8 @@ __meta__ = {
 }
 
 [node name="Cleaness" type="Label" parent="Tutorial2/Labels"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.0
-margin_top = -20.0
-margin_right = 188.0
-margin_bottom = 121.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
 text = "-Limpieza-
@@ -776,15 +513,8 @@ __meta__ = {
 }
 
 [node name="Food" type="Label" parent="Tutorial2/Labels"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.0
-margin_top = -20.0
-margin_right = 188.0
-margin_bottom = 121.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
 text = "-Raciones de comida-
@@ -798,15 +528,8 @@ __meta__ = {
 }
 
 [node name="Money" type="Label" parent="Tutorial2/Labels"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.0
-margin_top = -20.0
-margin_right = 188.0
-margin_bottom = 121.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
 text = "-Dinero-
@@ -823,8 +546,6 @@ editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -893,9 +614,13 @@ __meta__ = {
 
 [node name="Options" type="HBoxContainer" parent="Tutorial2"]
 editor/display_folded = true
-margin_top = 192.0
-margin_right = 256.0
-margin_bottom = 224.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -32.0
+margin_right = 128.0
 rect_min_size = Vector2( 0, 30 )
 custom_constants/separation = 8
 alignment = 1
@@ -948,45 +673,332 @@ __meta__ = {
 }
 
 [node name="GameConfig" type="Control" parent="."]
+editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -224.0
-margin_bottom = -224.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="GameConfig"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -104.0
-margin_right = 128.0
-margin_bottom = -89.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.498039, 0.596078, 0.376471, 1 )
-text = "-Selecciona tu situación-"
+[node name="GameModes" type="VBoxContainer" parent="GameConfig"]
+editor/display_folded = true
+margin_left = 4.0
+margin_top = 40.0
+margin_right = 84.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 0, 32 )
+alignment = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Mode0" type="TextureButton" parent="GameConfig/GameModes"]
+editor/display_folded = true
+margin_right = 80.0
+margin_bottom = 30.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes/Mode0"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 74.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "China"
 align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode1" type="TextureButton" parent="GameConfig/GameModes"]
+editor/display_folded = true
+margin_top = 34.0
+margin_right = 80.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes/Mode1"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 74.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "Europa"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode2" type="TextureButton" parent="GameConfig/GameModes"]
+editor/display_folded = true
+margin_top = 68.0
+margin_right = 80.0
+margin_bottom = 98.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes/Mode2"]
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 74.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "America
+Latina"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode3" type="TextureButton" parent="GameConfig/GameModes"]
+editor/display_folded = true
+margin_top = 102.0
+margin_right = 80.0
+margin_bottom = 132.0
+disabled = true
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes/Mode3"]
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 74.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "---"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode4" type="TextureButton" parent="GameConfig/GameModes"]
+editor/display_folded = true
+margin_top = 136.0
+margin_right = 80.0
+margin_bottom = 166.0
+disabled = true
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes/Mode4"]
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 74.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "---"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameModes2" type="VBoxContainer" parent="GameConfig"]
+editor/display_folded = true
+margin_left = 87.0
+margin_top = 40.0
+margin_right = 167.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 0, 32 )
+alignment = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Mode0" type="TextureButton" parent="GameConfig/GameModes2"]
+editor/display_folded = true
+margin_right = 80.0
+margin_bottom = 30.0
+disabled = true
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes2/Mode0"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 74.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "---"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode1" type="TextureButton" parent="GameConfig/GameModes2"]
+editor/display_folded = true
+margin_top = 34.0
+margin_right = 80.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes2/Mode1"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 74.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "---"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode2" type="TextureButton" parent="GameConfig/GameModes2"]
+editor/display_folded = true
+margin_top = 68.0
+margin_right = 80.0
+margin_bottom = 98.0
+disabled = true
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes2/Mode2"]
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 74.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "---"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode3" type="TextureButton" parent="GameConfig/GameModes2"]
+editor/display_folded = true
+margin_top = 102.0
+margin_right = 80.0
+margin_bottom = 132.0
+disabled = true
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes2/Mode3"]
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 74.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "---"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode4" type="TextureButton" parent="GameConfig/GameModes2"]
+editor/display_folded = true
+margin_top = 136.0
+margin_right = 80.0
+margin_bottom = 166.0
+disabled = true
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+texture_disabled = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="GameConfig/GameModes2/Mode4"]
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 74.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.972549, 0.933333, 0.74902, 1 )
+text = "---"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Config" type="VBoxContainer" parent="GameConfig"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -120.0
-margin_top = -82.0
-margin_right = 120.0
-margin_bottom = 68.0
+margin_left = -40.0
+margin_top = -80.0
+margin_right = 208.0
+margin_bottom = 106.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Infected" type="Control" parent="GameConfig/Config"]
 editor/display_folded = true
-margin_right = 240.0
+margin_right = 248.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 0, 18 )
 
@@ -1010,44 +1022,43 @@ anchor_bottom = 0.5
 margin_left = -18.0
 margin_top = -9.0
 margin_bottom = 9.0
-texture_normal = ExtResource( 26 )
+texture_normal = ExtResource( 29 )
 
-[node name="Stat0" parent="GameConfig/Config" instance=ExtResource( 27 )]
+[node name="Stat0" parent="GameConfig/Config" instance=ExtResource( 30 )]
 margin_top = 22.0
 margin_bottom = 40.0
 text = "Prob. de estar sano"
 icon = ExtResource( 8 )
 
-[node name="Stat1" parent="GameConfig/Config" instance=ExtResource( 27 )]
+[node name="Stat1" parent="GameConfig/Config" instance=ExtResource( 30 )]
 margin_top = 44.0
 margin_bottom = 62.0
 text = "Estado de animo"
 index = 1
-icon = ExtResource( 28 )
+icon = ExtResource( 31 )
 
-[node name="Stat2" parent="GameConfig/Config" instance=ExtResource( 27 )]
+[node name="Stat2" parent="GameConfig/Config" instance=ExtResource( 30 )]
 margin_top = 66.0
 margin_bottom = 84.0
 text = "Limpieza"
 index = 2
 icon = ExtResource( 17 )
 
-[node name="Stat3" parent="GameConfig/Config" instance=ExtResource( 27 )]
+[node name="Stat3" parent="GameConfig/Config" instance=ExtResource( 30 )]
 margin_top = 88.0
 margin_bottom = 106.0
 text = "Raciones de comida"
-deltaValue = 4
 index = 3
 icon = ExtResource( 20 )
 
-[node name="Stat4" parent="GameConfig/Config" instance=ExtResource( 27 )]
+[node name="Stat4" parent="GameConfig/Config" instance=ExtResource( 30 )]
 margin_top = 110.0
 margin_bottom = 128.0
 text = "Socialización"
 index = 4
 icon = ExtResource( 14 )
 
-[node name="Stat5" parent="GameConfig/Config" instance=ExtResource( 27 )]
+[node name="Stat5" parent="GameConfig/Config" instance=ExtResource( 30 )]
 margin_top = 132.0
 margin_bottom = 150.0
 text = "Dinero"
@@ -1055,26 +1066,29 @@ deltaValue = 1000
 index = 5
 icon = ExtResource( 23 )
 
-[node name="Options" type="HBoxContainer" parent="GameConfig"]
-margin_top = 192.0
-margin_right = 256.0
-margin_bottom = 224.0
+[node name="Options" type="HBoxContainer" parent="GameConfig/Config"]
+editor/display_folded = true
+margin_top = 154.0
+margin_right = 248.0
+margin_bottom = 186.0
 rect_min_size = Vector2( 0, 32 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="TextureButton" parent="GameConfig/Options"]
+[node name="Back" type="TextureButton" parent="GameConfig/Config/Options"]
 editor/display_folded = true
-margin_left = 4.0
-margin_right = 84.0
+margin_right = 80.0
 margin_bottom = 32.0
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 30 )
-texture_hover = ExtResource( 31 )
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Label" type="Label" parent="GameConfig/Options/Back"]
+[node name="Label" type="Label" parent="GameConfig/Config/Options/Back"]
 margin_left = 6.0
 margin_top = 7.0
 margin_right = 74.0
@@ -1088,16 +1102,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Default" type="TextureButton" parent="GameConfig/Options"]
+[node name="Default" type="TextureButton" parent="GameConfig/Config/Options"]
 editor/display_folded = true
-margin_left = 88.0
-margin_right = 168.0
+margin_left = 84.0
+margin_right = 164.0
 margin_bottom = 32.0
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 30 )
-texture_hover = ExtResource( 31 )
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Label" type="Label" parent="GameConfig/Options/Default"]
+[node name="Label" type="Label" parent="GameConfig/Config/Options/Default"]
 margin_left = 6.0
 margin_top = 7.0
 margin_right = 74.0
@@ -1111,16 +1128,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="TextureButton" parent="GameConfig/Options"]
+[node name="Start" type="TextureButton" parent="GameConfig/Config/Options"]
 editor/display_folded = true
-margin_left = 172.0
-margin_right = 252.0
+margin_left = 168.0
+margin_right = 248.0
 margin_bottom = 32.0
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 30 )
-texture_hover = ExtResource( 31 )
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Label" type="Label" parent="GameConfig/Options/Start"]
+[node name="Label" type="Label" parent="GameConfig/Config/Options/Start"]
 margin_left = 6.0
 margin_top = 7.0
 margin_right = 74.0
@@ -1134,18 +1154,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BackToTitle = SubResource( 1 )
-anims/MainToGameConfig = SubResource( 2 )
-anims/MainToTutorial1 = SubResource( 3 )
-anims/StartGame = SubResource( 4 )
-anims/ThanksToMain = SubResource( 5 )
-anims/Tutorial1ToTutorial2 = SubResource( 6 )
-anims/Tutorial2ToMain = SubResource( 7 )
+[node name="Title" type="Label" parent="GameConfig"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.0
+margin_top = -104.0
+margin_right = 212.0
+margin_bottom = -89.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.498039, 0.596078, 0.376471, 1 )
+text = "-Configuraciones de partida-"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title2" type="Label" parent="GameConfig"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -207.0
+margin_top = -104.0
+margin_right = -43.0
+margin_bottom = -89.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.498039, 0.596078, 0.376471, 1 )
+text = "-Modos predefinidos-"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transition" parent="." instance=ExtResource( 32 )]
+visible = false
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 32 )
-volume_db = -10.0
+stream = ExtResource( 33 )
+volume_db = -25.0
 autoplay = true
 [connection signal="pressed" from="Thanks/Options/Exit" to="." method="ThanksExitPressed"]
 [connection signal="pressed" from="Thanks/Options/Back" to="." method="ThanksBackPressed"]
@@ -1162,6 +1210,16 @@ autoplay = true
 [connection signal="pressed" from="Tutorial2/Icons/Money" to="." method="MoneyPressed"]
 [connection signal="pressed" from="Tutorial2/Options/Back" to="." method="Tutorial2AnteriorPressed"]
 [connection signal="pressed" from="Tutorial2/Options/BackMain" to="." method="Tutorial2VolverPressed"]
+[connection signal="pressed" from="GameConfig/GameModes/Mode0" to="." method="GameModepressed" binds= [ 0 ]]
+[connection signal="pressed" from="GameConfig/GameModes/Mode1" to="." method="GameModepressed" binds= [ 1 ]]
+[connection signal="pressed" from="GameConfig/GameModes/Mode2" to="." method="GameModepressed" binds= [ 2 ]]
+[connection signal="pressed" from="GameConfig/GameModes/Mode3" to="." method="GameModepressed" binds= [ 2 ]]
+[connection signal="pressed" from="GameConfig/GameModes/Mode4" to="." method="GameModepressed" binds= [ 2 ]]
+[connection signal="pressed" from="GameConfig/GameModes2/Mode0" to="." method="GameModepressed" binds= [ 0 ]]
+[connection signal="pressed" from="GameConfig/GameModes2/Mode1" to="." method="GameModepressed" binds= [ 1 ]]
+[connection signal="pressed" from="GameConfig/GameModes2/Mode2" to="." method="GameModepressed" binds= [ 2 ]]
+[connection signal="pressed" from="GameConfig/GameModes2/Mode3" to="." method="GameModepressed" binds= [ 2 ]]
+[connection signal="pressed" from="GameConfig/GameModes2/Mode4" to="." method="GameModepressed" binds= [ 2 ]]
 [connection signal="pressed" from="GameConfig/Config/Infected/Checker" to="." method="InfectedCheckerPressed"]
 [connection signal="valueChange" from="GameConfig/Config/Stat0" to="." method="StatValueChange"]
 [connection signal="valueChange" from="GameConfig/Config/Stat1" to="." method="StatValueChange"]
@@ -1169,7 +1227,6 @@ autoplay = true
 [connection signal="valueChange" from="GameConfig/Config/Stat3" to="." method="StatValueChange"]
 [connection signal="valueChange" from="GameConfig/Config/Stat4" to="." method="StatValueChange"]
 [connection signal="valueChange" from="GameConfig/Config/Stat5" to="." method="StatValueChange"]
-[connection signal="pressed" from="GameConfig/Options/Back" to="." method="GameConfigBackPressed"]
-[connection signal="pressed" from="GameConfig/Options/Default" to="." method="GameConfigDefaultPressed"]
-[connection signal="pressed" from="GameConfig/Options/Start" to="." method="GameConfigStartPressed"]
-[connection signal="finished" from="BGMusic" to="." method="_on_BGMusic_finished"]
+[connection signal="pressed" from="GameConfig/Config/Options/Back" to="." method="GameConfigBackPressed"]
+[connection signal="pressed" from="GameConfig/Config/Options/Default" to="." method="GameConfigDefaultPressed"]
+[connection signal="pressed" from="GameConfig/Config/Options/Start" to="." method="GameConfigStartPressed"]

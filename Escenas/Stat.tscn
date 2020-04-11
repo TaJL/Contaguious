@@ -27,3 +27,4 @@ rect_min_size = Vector2( 58, 18 )
 custom_fonts/font = ExtResource( 3 )
 text = "99999999"
 valign = 1
+[connection signal="pressed" from="Icon" to="." method="ButtonPressed"]
